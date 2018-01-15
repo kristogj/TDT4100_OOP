@@ -5,16 +5,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AccountController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stateandbehavior.AccountController">
    <children>
       <Label layoutX="14.0" layoutY="22.0" text="Balance:" />
       <Label layoutX="14.0" layoutY="49.0" text="IntrestRate: " />
       <TextField fx:id="depositField" layoutX="40.0" layoutY="113.0" promptText="Deposit" />
-      <Button fx:id="deposit" layoutX="218.0" layoutY="113.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="Deposit" />
-      <Button fx:id="addIntrest" layoutX="496.0" layoutY="26.0" mnemonicParsing="false" text="addIntrest" />
+      <Button fx:id="depositButton" layoutX="218.0" layoutY="113.0" mnemonicParsing="false" onAction="#deposit" prefHeight="27.0" prefWidth="78.0" text="Deposit" />
+      <Button fx:id="addIntrestButton" layoutX="496.0" layoutY="26.0" mnemonicParsing="false" onAction="#addIntrest" text="addIntrest" />
       <TextField fx:id="intrestField" layoutX="40.0" layoutY="154.0" promptText="Set IntrestRate" />
-      <Button fx:id="setIntrest" layoutX="218.0" layoutY="154.0" mnemonicParsing="false" text="setIntrest" />
+      <Button fx:id="setIntrestButton" layoutX="218.0" layoutY="154.0" mnemonicParsing="false" onAction="#setIntrest" text="setIntrest" />
       <Label fx:id="balance" layoutX="71.0" layoutY="22.0" />
       <Label fx:id="intrestRate" layoutX="92.0" layoutY="49.0" />
    </children>
