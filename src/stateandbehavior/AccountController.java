@@ -18,27 +18,34 @@ public class AccountController {
 	Label balance, intrestRate;
 	
 	@FXML
-	Button depositButton, addIntrestButton, setIntrestButton;
+	Button depositButton, addIntrestButton, setIntrestButton, clearButton;
 	
 	public AccountController() {
 		
 	}
 	
 	public void deposit() {
-		int value = Integer.valueOf(depositField.getText());
+		Double value = Double.valueOf(depositField.getText());
 		account.deposit(value);
 		balance.setText(Double.toString(account.getBalance()));
 	}
 	
 	public void setIntrest() {
-		int value = Integer.valueOf(intrestField.getText());
+		Double value = Double.valueOf(intrestField.getText());
 		account.setInterestRate(value);
-		intrestRate.setText(Integer.toString(account.getInterestRate()));
+		intrestRate.setText(Double.toString(account.getInterestRate()));
 	}
 	
 	public void addIntrest() {
 		account.addInterest();
 		balance.setText(Double.toString(account.getBalance()));
+	}
+	
+	public void clear() {
+		account.balance = 0.0;
+		account.intrestRate = 0.0;
+		balance.setText(Double.toString(account.getBalance()));
+		intrestRate.setText(Double.toString(account.getInterestRate()));
 	}
 	
 	

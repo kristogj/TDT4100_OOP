@@ -3,10 +3,10 @@ package stateandbehavior;
 public class Account {
 	
 	Double balance = 0.0;
-	int intrestRate;
+	Double intrestRate = 0.0;
 	
 	
-	public void deposit(int verdi) {
+	public void deposit(Double verdi) {
 		if (verdi > 0.0){
 			balance += verdi;
 		}
@@ -20,11 +20,11 @@ public class Account {
 		return balance;
 	}
 	
-	public int getInterestRate() {
+	public Double getInterestRate() {
 		return intrestRate;
 	}
 	
-	public void setInterestRate(int rate) {
+	public void setInterestRate(Double rate) {
 		if (rate > 0 && intrestRate < 100) {
 			intrestRate = rate;
 		}
