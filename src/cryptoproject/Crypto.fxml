@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cryptoproject.CryptoController">
    <children>
       <Button fx:id="updateButton" layoutX="250.0" layoutY="289.0" mnemonicParsing="false" onAction="#update" text="Update" />
@@ -23,11 +22,6 @@
             <Label text="Litecoin" />
          </children>
       </HBox>
-      <Label fx:id="btcusd" alignment="CENTER" layoutX="130.0" layoutY="46.0" text="..." />
-      <Label fx:id="btcnok" alignment="CENTER" layoutX="130.0" layoutY="75.0" text="..." />
-      <Label fx:id="ethusd" alignment="CENTER" layoutX="283.0" layoutY="48.0" text="..." />
-      <Label fx:id="ltcusd" alignment="CENTER" layoutX="447.0" layoutY="46.0" text="..." />
-      <Label fx:id="ethnok" alignment="CENTER" layoutX="283.0" layoutY="75.0" text="..." />
-      <Label fx:id="ltcnok" alignment="CENTER" layoutX="447.0" layoutY="75.0" text="..." />
+      <Label fx:id="btcnok" layoutX="150.0" layoutY="153.0" text="Label" />
    </children>
 </Pane>

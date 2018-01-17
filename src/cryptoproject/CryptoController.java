@@ -1,5 +1,4 @@
 package cryptoproject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,19 +24,22 @@ public class CryptoController {
 	Label btcusd, ltcusd, ethusd, btcnok, ltcnok, ethnok;
 	
 	
+	public CryptoController() {
+		
+	}
+	
 	public void update() throws IOException{
 		ArrayList<Double> btc = crypto.URLReader(BTC);
 		ArrayList<Double> ltc = crypto.URLReader(LTC);
 		ArrayList<Double> eth = crypto.URLReader(ETH);
 		
-//		btcusd.setText(Double.toString(btc.get(0)));
-//		ltcusd.setText(Double.toString(ltc.get(0)));
-//		ethusd.setText(Double.toString(eth.get(0)));
-//		btcnok.setText("hei");
-//		ltcnok.setText(Double.toString(ltc.get(1)));
-//		ethnok.setText(Double.toString(eth.get(1)));
-//		
-//		System.out.println(Double.toString(btc.get(1)));
+		System.out.println("hei");
+		System.out.println(btc.get(1));
 	}
-
+	
+	
+	public static void main(String[] args) throws IOException {
+		CryptoController c = new CryptoController();
+		c.update();
+	}
 }
