@@ -1,13 +1,16 @@
 package encapsulation;
 
+import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+import com.google.common.base.Splitter;
+
 public class Person {
 	
-	private String name, email;
+	private String name, email,ssn;
 	private char gender;
 	private Date birthday;
 	
@@ -30,18 +33,25 @@ public class Person {
 	
 	
 	public Person() {
-		
+		this.gender = ' ';
 	}
 	
 	public void isValidName(String name) {
+		
+		if(! name.contains(" ")) {
+			throw new IllegalArgumentException("Just firstname");
+		}
+		
+		String[] ledd = name.split(" ");
+		if (ledd.length != 2) {
+			throw new IllegalArgumentException();
+		}
+		
 		for(int i = 0; i < name.length();i++) {
 			char c = name.charAt(i);
 			if(! (Character.isLetter(c) || c == ' ' || c == '-')) {
 				throw new IllegalArgumentException("Not all letters");
 			}
-		}
-		if(! name.contains(" ")) {
-			throw new IllegalArgumentException("Just firstname");
 		}
 		
 		String first = name.substring(0,name.indexOf(' '));
@@ -57,9 +67,9 @@ public class Person {
 		}
 		
 		String [] parts = mail.split("@");
-		String first = parts[0].substring(0,parts[0].indexOf("."));
-		String last = parts[0].substring(parts[0].indexOf(".") + 1);
-		if(!(first.equals(getFirstname()) && last.equals(getLastname()))) {
+		String first = parts[0].substring(0,parts[0].indexOf(".")).toLowerCase();
+		String last = parts[0].substring(parts[0].indexOf(".") + 1).toLowerCase();
+		if(!(first.equals(getFirstname().toLowerCase()) && last.equals(getLastname().toLowerCase()))) {
 			throw new IllegalArgumentException("Unavalid name in mail");
 		}
 		
@@ -67,12 +77,57 @@ public class Person {
 		if(!(landekoder.contains(landekode))) {
 			throw new IllegalArgumentException("Unvalid landekode");
 		}
+	}
+	
+	public void isValidSSN(String ssn) {
+		String F = "376189542";
+		String G = "5432765432";
+		if (this.birthday == null || this.gender==' ') {
+			throw new IllegalArgumentException("Need more information before setSSN");
+		}
+		if (ssn.length() != 11) {
+			throw new IllegalArgumentException("Unvalid length ssn");
+		}
+		int bday = Integer.parseInt(ssn.substring(0,2));
+		int bmonth = Integer.parseInt(ssn.substring(2,4));
+		int byear = Integer.parseInt(ssn.substring(4,6));
+		//Check birthday
+		if( !(bday == this.birthday.getDate() && bmonth == (this.birthday.getMonth()+1)) && byear == this.birthday.getYear() ) {
+			throw new IllegalArgumentException("Illegal birthday");
+		}
+		//Check odd or even
+		ArrayList<String> str = new ArrayList<String>(Arrays.asList(ssn.split("")));
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		str.forEach(s -> nums.add(Integer.parseInt(s)));
 		
+		if( ! ( (this.gender=='M' && nums.get(8)%2!=0) || (this.gender == 'F' && nums.get(8)%2==0) ) ) {
+			throw new IllegalArgumentException("Wrong oddoreven");
+		}
+		
+		//Check kontrollsiffer
+		int VSK1 = 0;
+		for(int i = 0; i < F.length(); i++) { VSK1 += nums.get(i)*Integer.parseInt(F.substring(i,i+1));}
+		int VSK2 = 0;
+		for(int i = 0; i < G.length(); i++) { VSK2 += nums.get(i)*Integer.parseInt(G.substring(i,i+1));}
+		
+		int K1 = 11 - (VSK1 % 11);
+		int K2 = 11 - (VSK2 % 11);
+		K1 = (K1 == 11) ? 0:K1;
+		K2 = (K2 == 11) ? 0:K2;
+		
+		if( K1!=nums.get(9) || K2!=nums.get(10)) {
+			throw new IllegalArgumentException("K1 or K2 wrong");
+		}
+	
 	}
 	
 	public void setName(String name) {
 		isValidName(name);
 		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 	
 	public String getFirstname() {
@@ -84,6 +139,11 @@ public class Person {
 	
 	public void setEmail(String mail) {
 		isValidMail(mail);
+		this.email = mail;
+	}
+	
+	public String getEmail() {
+		return this.email;
 	}
 	
 	public void setBirthday(Date date) {
@@ -97,12 +157,29 @@ public class Person {
 		
 	}
 	
+	public Date getBirthday() {
+		return this.birthday;
+	}
+	
 	public void setGender(char gender) {
-		String s = "MF";
-		if(!(s.contains(String.valueOf(gender)) || this.gender == '\0')) {
+		if(!(gender == 'M' || gender=='F' || gender=='\0')) {
 			throw new IllegalArgumentException("Unvalid gender");
 		}
 		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return this.gender;
+	}
+	
+	
+	public void setSSN(String ssn) {
+		isValidSSN(ssn);
+		this.ssn = ssn;
+	}
+	
+	public String getSSN() {
+		return this.ssn;
 	}
 	
 	public static void main(String[] args) {
@@ -110,8 +187,12 @@ public class Person {
 		p.setName("Kristoffer Gjerde");
 		System.out.println(p.getFirstname() + p.getLastname());
 		p.setEmail("Kristoffer.Gjerde@gmail.no");
-		Date d= new Date();
+		Date d= new java.sql.Date(97, 5, 13);
+		System.out.println(d);
+		
 		p.setBirthday(d);
+		p.setGender('M');
+		
 	}
 
 }
