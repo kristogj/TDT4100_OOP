@@ -16,6 +16,7 @@ public class CryptoApp extends Application {
 	    Parent panel = FXMLLoader.load(getClass().getResource("Crypto.fxml"));
 	    Scene scene = new Scene(panel);
 	    stage.setScene(scene);
+	    stage.setTitle("Crypto");
 	    stage.show();
 	  }
 	
