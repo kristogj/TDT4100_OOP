@@ -42,9 +42,8 @@ public class TicTacToeController {
 		int y = Character.getNumericValue(button.getId().charAt(2));
 		if(!game.isFinished() && !game.isOccupied(x, y)) {
 			usedButtons.add(button);
-			char player = game.getCurrentPlayer();
-			this.game.setCell(player, x, y);
-			button.setText("" + player);
+			game.play(x, y);
+			button.setText("" + game.getLastPlayer());
 			update();
 		}
 	}
