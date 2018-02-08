@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudoku.SudokuController">
+   <children>
+      <GridPane fx:id="grid" layoutX="25.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="C32" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C12" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C13" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C14" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C15" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C16" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C17" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C18" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C19" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C25" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C91" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C81" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C71" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C61" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C51" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C41" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C31" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C21" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C22" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C23" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C92" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C82" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C72" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C62" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C52" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C42" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C94" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C84" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C74" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C64" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C54" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C44" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C43" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C34" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C33" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C11" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C75" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C65" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C55" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C45" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C35" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C93" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C83" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C73" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C63" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C53" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C24" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C96" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C95" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C86" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C85" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C76" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C66" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C56" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C46" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C36" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C26" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C99" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C28" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C97" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C87" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C77" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C67" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C57" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C47" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C37" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C27" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C89" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C29" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C98" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="8">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C88" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="7">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C78" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C68" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C58" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C48" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C38" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C79" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="6">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C69" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="5">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C59" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C49" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="3">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="C39" alignment="CENTER" onAction="#actionOnCell" prefHeight="66.7" prefWidth="66.7" GridPane.columnIndex="8" GridPane.rowIndex="2">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </TextField>
+         </children>
+      </GridPane>
+      <Line endX="625.0" endY="225.0" startX="25.0" startY="225.0" strokeWidth="5.0" />
+      <Label fx:id="topText" layoutX="26.0" layoutY="5.0" text="Good Luck" />
+      <Line endX="625.0" endY="421.0" layoutX="10.0" layoutY="10.0" startX="12.0" startY="420.0" strokeWidth="5.0" />
+      <Line endX="25.0" endY="600.0" layoutX="200.0" layoutY="20.0" startX="25.0" startY="10.0" strokeWidth="5.0" />
+      <Line endX="225.0" endY="600.0" layoutX="202.0" layoutY="20.0" startX="225.0" startY="10.0" strokeWidth="5.0" />
+   </children>
+</Pane>
