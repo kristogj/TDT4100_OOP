@@ -5,6 +5,8 @@ public class Calculator {
 	String valueText,operator;
 	double memory = 0.0;
 	
+	double test = 0.0;
+	
 	public Calculator() {
 		
 	}
