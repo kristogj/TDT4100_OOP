@@ -7,6 +7,8 @@ public class Calculator {
 	
 	double test = 0.0;
 	
+	double merge = 0.0;
+	
 	public Calculator() {
 		
 	}
