@@ -18,6 +18,7 @@ public class SudokuController {
 	private Sudoku game;
 	
 	
+	
 	@FXML
 	GridPane grid;
 	
@@ -28,6 +29,7 @@ public class SudokuController {
 		String board = ".....2..38.273.45....6..87.9.8..5367..6...1..4513..9.8.84..3....79.512.62..8.....";
 		this.game = new Sudoku(board);
 		this.gridCells = grid.getChildren();
+		System.out.println(gridCells);
 		setupBoardView();
 	}
 	
