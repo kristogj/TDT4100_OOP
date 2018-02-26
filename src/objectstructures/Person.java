@@ -75,6 +75,7 @@ public class Person {
 			if(! (child.getFather() == this)) {
 				child.setFather(this);
 			}
+			break;
 		}
 		
 	}
@@ -98,6 +99,7 @@ public class Person {
 			if(child.getFather() == this) {
 				child.setFather(null);
 			}
+			break;
 		}
 		
 		
