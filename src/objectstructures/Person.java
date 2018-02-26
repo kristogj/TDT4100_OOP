@@ -54,65 +54,116 @@ public class Person {
 		return this.children.get(i);
 	}
 	
+	//mother/father.addChild(child)
 	public void addChild(Person child) {
-		if(child.equals(this)) {
-			throw new IllegalArgumentException("You can´t add yourself");
-		}
-		
-		//If Female set mother, if Male set father
-		switch (this.gender) {
-		
-		case 'F': 
-			if(child.getMother() != null) {
-				//In case of change of mother
-				child.getMother().removeChild(child);
-			}
-			child.mother = this;
-			break;
-			
-		case 'M': 
-			if(child.getFather() != null) {
-				//In case of change in father
-				child.getFather().removeChild(child);
-			}
-			child.father = this;
-			break;
-		
-		//Would not happen	
-		default: throw new IllegalStateException("Unvalid gender");
+		checkSelf(this, child);
+		//Check if the connection is correct already
+		if (this.children.contains(child)) {
+			return;
 		}
 		this.children.add(child);
+		
+		//Make the connection from child to parent if you have to
+		switch(this.gender) {
+		case 'F':
+			if(! (child.getMother() == this)) {
+				child.setMother(this);
+			}
+			break;
+		
+		case 'M': 
+			if(! (child.getFather() == this)) {
+				child.setFather(this);
+			}
+		}
+		
 	}
 	
 	public void removeChild(Person child) {
-		if( ! this.children.contains(child)) {
-			throw new IllegalArgumentException("That´s not your child");
+		// Check if the connection is correct already
+		if (! this.children.contains(child)) {
+			return;
 		}
-		switch (this.gender) {
-		//Remove motherrole
-		case 'F': child.mother = null; break;
-		//Remove fatherrole
-		case 'M': child.father = null; break;
-		
-		//Would not happen
-		default: throw new IllegalStateException("Unvalid gender");
-		}
-		//Remove child from this objects children
 		this.children.remove(child);
-	}
-	
-	public void setMother(Person mother) {
-		if (mother.getGender() != 'F') {
-			throw new IllegalArgumentException("You should be this childs father");
+		
+		//Remove the connection from child to parent if you have to
+		switch(this.gender) {
+		case 'F':
+			if(child.getMother() == this) {
+				child.setMother(null);
+			}
+			break;
+		
+		case 'M': 
+			if(child.getFather() == this) {
+				child.setFather(null);
+			}
 		}
-		mother.addChild(this);
+		
+		
+	}
+	// child.setMother(mother)
+	public void setMother(Person mother) {
+		
+		checkSelf(this, mother);
+		checkGender(mother,'F');
+		
+		//Check if the connection is correct already
+		if (this.mother == mother) {
+			return;
+		}
+		
+		//Remove the old connection from mother to child
+		if (this.mother != null) {
+			this.mother.removeChild(this);
+		}
+		
+		this.mother = mother;
+		
+		// Make the new connection if you have to
+		if (this.mother != null) {
+			this.mother.addChild(this);
+		}
+		
 	}
 	
 	public void setFather(Person father) {
-		if(father.getGender() !=  'M') {
-			throw new IllegalArgumentException("You should be this childs mother");
+		
+		checkSelf(this, father);
+		checkGender(father, 'M');
+		
+		//Check if the connection is correct already
+		if (this.father == father) {
+			return;
 		}
-		father.addChild(this);
+		
+		//Remove the old connection from mother to child
+		if (this.father != null) {
+			this.father.removeChild(this);
+		}
+		
+		this.father = father;
+		
+		// Make the new connection if you have to
+		if (this.father != null) {
+			this.father.addChild(this);
+		}
+		
+	}
+	
+	private void checkSelf(Person p1, Person p2) {
+		if (p1 == p2) {
+			throw new IllegalArgumentException();
+		}
+	}
+	
+	private void checkGender(Person p1, char c2) {
+		if (p1 != null) {
+			char c1 = p1.getGender();
+			if (c1 != c2) {
+				throw new IllegalArgumentException();
+			}
+		}
 	}
 	
 	
