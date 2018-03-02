@@ -15,7 +15,12 @@ public class CardComparator implements Comparator<Card> {
 			trumfOrder.deleteCharAt(trumfOrder.indexOf(Character.toString(trumf)));
 			trumfOrder.insert(0, trumf);
 		}
-		
+	}
+	
+	//Ekstraoppgave; bestem trumfmonster selv
+	public CardComparator(boolean essBest, String trumfOrder) {
+		this.essBest = essBest;
+		this.trumfOrder = new StringBuilder(trumfOrder);
 	}
 	
 	@Override
