@@ -1,0 +1,12 @@
+/tests/*
+/CardDeckTest.java
+/CardContainerIteratorTest.java
+/CardPredicateTest.java
+/NamedComparatorTest.java
+/Person1Test.java
+/Person2Test.java
+/RPNCalcTest.java
+/StringGridTest.java
+/CardHandTest.java
+/CardComparatorTest.java
+/BinaryComputingIteratorTest.java
