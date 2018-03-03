@@ -2,10 +2,8 @@ package interfaces;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.BinaryOperator;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -19,7 +17,6 @@ public class RPNCalc {
 	private Map<Character,UnaryOperator<Double>> unaryOperators;
 	private Map<Character,Supplier<Double>> suppliers;
 	
-	Map<Character,HashMap> bigMap;
 	
 	
 	public RPNCalc() {
