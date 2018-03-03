@@ -3,6 +3,8 @@ package interfaces;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class CardDeck implements CardContainer{
 	
@@ -73,6 +75,19 @@ public class CardDeck implements CardContainer{
 	@Override
 	public Iterator<Card> iterator() {
 		return new CardContainerIterator(this);
+	}
+	
+	//Predicate oppgave
+	public boolean hasCard(Predicate<Card> predicate) {
+		return this.deck.stream().anyMatch(predicate);
+	}
+	
+	public int getCardCount(Predicate<Card> predicate) {
+		return this.deck.stream().filter(predicate).collect(Collectors.toList()).size();
+	}
+	
+	public List<Card> getCards(Predicate<Card> predicate){
+		return this.deck.stream().filter(predicate).collect(Collectors.toList());
 	}
 
 	
