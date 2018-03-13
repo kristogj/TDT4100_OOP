@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -9,8 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudoku.SudokuController">
+<Pane prefHeight="671.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudoku.SudokuController">
    <children>
       <GridPane fx:id="grid" layoutX="25.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
         <columnConstraints>
@@ -448,5 +448,7 @@
       <Line endX="625.0" endY="421.0" layoutX="10.0" layoutY="10.0" startX="12.0" startY="420.0" strokeWidth="5.0" />
       <Line endX="25.0" endY="600.0" layoutX="200.0" layoutY="20.0" startX="25.0" startY="10.0" strokeWidth="5.0" />
       <Line endX="225.0" endY="600.0" layoutX="202.0" layoutY="20.0" startX="225.0" startY="10.0" strokeWidth="5.0" />
+      <Button layoutX="430.0" layoutY="630.0" mnemonicParsing="false" onAction="#undo" text="undo" />
+      <Button layoutX="500.0" layoutY="630.0" mnemonicParsing="false" onAction="#redo" text="redo" />
    </children>
 </Pane>
